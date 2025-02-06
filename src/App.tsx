@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { IsLeapYear } from "./1-fonksiyonlar";
+import { GetProfit } from "./2-objeler";
+import { dune } from "./2-objeler";
+import { cats } from "./2-objeler";
+import { KardesPayi as KardesPayiImported } from "./1-fonksiyonlar";
+import { GetTotal } from "./3-arrayler";
+import { myProducts } from "./3-arrayler";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const KardesPayi = (name?: string) => {
+    if (name) {
+      return `bi tane ${name} için, bir de benim için`;
+    } else {
+      return `bir tane senin için, bir de benim için`;
+    }
+  };
+
+  console.log(KardesPayi("güliş"));
+  console.log(GetProfit(dune));
+  console.log(GetProfit(cats));
+  console.log(GetTotal(myProducts)); // Buradaki hata düzeltildi
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h4>{KardesPayi()}</h4>
+      <h4>{IsLeapYear(2024) ? "Artık yıl" : "Artık yıl değil"}</h4>
+
+      {/* birini konsolda diğerini browser da farklı görmek için */}
+      {/* <IsLeapYear />
+      <GetProfit /> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

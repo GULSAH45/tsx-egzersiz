@@ -7,7 +7,8 @@
 
 // Kodu buraya yazalım...
 
-
+let ages:number[] = [];
+ages = [20, 25, 30, 35, 40];
 
 
 // **********************************************
@@ -20,6 +21,10 @@
 
 // Kodu buraya yazalım...
 
+let gameBoard:string[][] = [];
+ gameBoard= [["gülşah"],["şeyma"],["koçak"]]
+
+
 
 
 
@@ -31,9 +36,23 @@
 // {name: "coffee mug", price: 11.50}
 
 
-// Kodu buraya yazalım...
+// Kodu buraya yazalım...interfaceli yapıcam
 
+export interface ProductParams {
+    name:string
+    price:number
+}
 
+export let myProducts : ProductParams [] = [
+    {name: "coffee mug", price: 11.50},
+    {name: "coffee cup", price: 10.50},
+]
+
+export const GetTotal = (products:ProductParams[]) =>{
+    let total = 0  
+    products.forEach(product => { total += product.price})
+    return total
+}
 
 
 // **********************************************

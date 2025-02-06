@@ -6,7 +6,9 @@
 // Kodumuzu buraya yazıp interface'in yorum satırlarını kaldıralım...
 //}
 
-const dune: Movie = {
+
+
+export const dune: Movie = {
     title: "Dune",
     originalTitle: "Dune Part One",
     director: "Denis Villeneuve",
@@ -18,7 +20,7 @@ const dune: Movie = {
     },
 };
 
-const cats: Movie = {
+export const cats: Movie = {
     title: "Cats",
     director: "Tom Hooper",
     releaseYear: 2019,
@@ -40,3 +42,21 @@ const cats: Movie = {
 
 
 // Kodu buraya yazalım...
+export interface MovieParams {
+    title: string;
+    originalTitle?: string;
+    director: string;
+    releaseYear: number;
+    boxOffice :
+    {
+        budget: number;
+        grossUs: number;
+        grossWorldwide: number;
+    }
+}
+
+export const GetProfit = (Movie: MovieParams):number => {
+    return Movie.boxOffice.grossWorldwide - Movie.boxOffice.budget;
+    
+}
+console.log(GetProfit(dune));

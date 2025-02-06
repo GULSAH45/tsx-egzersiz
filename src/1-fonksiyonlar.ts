@@ -14,14 +14,8 @@
 
 // Kodu buraya yazalım...
 
-const kardesPayi = (name?: string) => {
-    if (name){
-        return `bi tane ${name} için, bir de benim için`;
-        } else {
-        return `bir tane senin için, bir de benim için`;
-    }
-}
 
+//apptsx de yaptım
 
 // **********************************************
 // ******************* BÖLÜM 2 ******************
@@ -54,3 +48,13 @@ const kardesPayi = (name?: string) => {
 
 
 // Kodu buraya yazalım...
+
+export const IsLeapYear = (year:number) : boolean => {
+    if(( year % 4 === 0 && year % 100 !== 0 ) || year % 400 === 0) {
+        return true;
+        } else {
+            return false;
+        }
+} 
+
+console.log(IsLeapYear(2012));
