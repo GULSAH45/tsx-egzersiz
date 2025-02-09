@@ -7,6 +7,8 @@
 
 // Kodu buraya yazalım...
 
+let highScore = number | boolean
+
 
 
 
@@ -20,7 +22,8 @@
 
 // Kodu buraya yazalım...
 
-
+let stuff =number[] | string[];
+stuff = [1, 2, 3,]
 
 
 // **********************************************
@@ -31,6 +34,15 @@
 
 
 // Kodu buraya yazalım...
+
+type SkillLevel = "Beginner" | "Intermediate" | "Advanced" | "Expert";
+
+type SkiSchoolStudent = {
+    name: string;
+    age: number;
+    sport: "ski" | "snowboard" | "both" | "neither" | "none" ; 
+    level: SkillLevel;
+};
 
 
 
@@ -49,7 +61,14 @@
 // Kodu buraya yazalım...
 
 
+const Gulsah: SkiSchoolStudent = {
+    name: "Gülşah",
+    age: 33,
+    sport: "ski",
+    level: "Beginner", // Yazım hatası düzeltildi
+};
 
+console.log(Gulsah);
 
 // **********************************************
 // ******************* BÖLÜM 5 ******************
@@ -64,6 +83,11 @@
 // Kodu buraya yazalım...
 
 
+type RGBColor = {
+    r: number, 
+    g: number, 
+    b: number
+}
 
 // HSL renklerini temsil eden bir tür oluşturalım. Bu tür, aşağıdaki özelliklere sahip
 // olsun:
@@ -73,6 +97,11 @@
 
 
 // Kodu buraya yazalım...
+type HSLColor = {
+    h:number, 
+    s: number, 
+    l: number
+}
 
 
 
@@ -83,7 +112,10 @@
 
 // Kodu buraya yazalım...
 
-
+let colors: (RGBColor | HSLColor)[] = [
+    { r: 255, g: 255, b: 255 },
+    { h: 255, s: 255, l: 255 },]
+    console.log(colors);
 
 
 // **********************************************
@@ -100,3 +132,13 @@
 
 
 // Kodu buraya yazalım...
+
+const greet = (name: string | string[]): void => {
+    if (Array.isArray(name)) {
+      name.forEach((isim) => console.log(`Merhaba, ${isim}`));
+    } else {
+      console.log(`Merhaba, ${name}`);
+    }
+}
+greet("Ahmet");
+greet(["Ali", "Veli"]);
