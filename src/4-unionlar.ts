@@ -22,7 +22,7 @@ let highScore = number | boolean
 
 // Kodu buraya yazalım...
 
-let stuff =number[] | string[];
+let stuff = number[] | string[];
 stuff = [1, 2, 3,]
 
 
